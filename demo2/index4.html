@@ -1,0 +1,106 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0;">
+    <title>Document</title>
+    <style>
+
+        * { padding: 0; margin: 0;box-sizing:border-box;
+            -moz-box-sizing:border-box; /* Firefox */
+            -webkit-box-sizing:border-box; /* Safari */}
+        html, body{ width: 100%; height: 100%;overflow:hidden;background:white}
+        #iSlider-show{height: 100%}
+        #iSlider-show li {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+            list-style: none;
+        }
+        #main_col{width: 100%;}
+        #gallery{height:100%;overflow:hidden;width: 100%;}
+        /* spacegallery 必要元素 */
+        .spacegallery{position:relative;overflow:hidden;max-width: 100%}
+        .spacegallery img{position:absolute;transform-origin:center center;max-width: 100%;top:0px;left: 0px;}
+        .spacegallery .spacearea{z-index:1000;position:absolute;width:100%;display:block;height:100%;top:0px;left:0px;}
+
+    </style>
+    <script src="js/islider.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../demo1/js/spacegallery.js"></script>
+    <script src="../demo1/js/jquery.event.move.js"></script>
+</head>
+<body>
+
+    <div id="iSlider-show" class="iSlider-show">
+
+    </div>
+
+<script type="text/javascript" charset="utf-8">
+
+
+    var canslide = true;
+
+    var domList = [
+        {
+            'height' : '100%',
+            'width' : '100%',
+            'content' : '<div id="main_col">'+
+                        '<div id="gallery" class="spacegallery">'+
+                        '<img  height="400" alt="jquery 特效" src="images/1.jpg" />'+
+    '<img  height="400" alt="jquery 特效" src="../demo1/images/2.jpg" />'+
+    '<img  height="400" alt="jquery 特效" src="../demo1/images/3.jpg" />'+
+    '<img  height="400" alt="jquery 特效" src="../demo1/images/4.jpg" />'+
+    '<img  height="400" alt="jquery 特效" src="../demo1/images/5.jpg" />'+
+    '<img  height="400" alt="jquery 特效" src="../demo1/images/6.jpg" />'+
+    '</div>'+
+    '</div>'
+        },
+        {
+            'height' : '100%',
+            'width' : '100%',
+            'content' : '<div class="sec"> <h1>Page1</h1><h2>This is page1</h2><p>page1 is pretty awsome</p><div>'
+        },{
+            'height' : '100%',
+            'width' : '100%',
+            'content' : '<div class="sec"><h1>Page2</h1><h2>This is Page2</h2><p>Page2 is pretty awsome</p><div>'
+        },{
+            'height' : '100%',
+            'width' : '100%',
+            'content' : '<div class="sec"><h1>Page3</h1><h2>This is page3</h2><p>page3 is pretty awsome</p><div>'
+        }
+    ];
+
+    var islider3 = new iSlider({
+        data: domList,
+        type: 'dom',
+        fixPage: true,
+        dom: document.getElementById("iSlider-show"),
+//        onslidestart: function () {
+//            if(!canslide){
+//                islider3.endHandler();
+//            }
+//        }
+
+    });
+
+        $("#gallery").spacegallery({
+            loadingClass: "loading",
+            perspective: 100,
+            before: function () {
+//                islider3.endHandler();
+                return true;
+            }
+        });
+
+
+</script>
+</body>
+</html>

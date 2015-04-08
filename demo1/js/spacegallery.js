@@ -156,7 +156,7 @@
 							.appendTo(this)
 							.addClass(opt.loadingClass)
 							.bind('move', function(e) {
-								// move .mydiv horizontally
+								e.preventDefault();
 								global_distance = Math.sqrt((Math.pow(e.distX,2)+Math.pow(e.distY,2)));
 								velocityX = e.velocityX;
 							})
