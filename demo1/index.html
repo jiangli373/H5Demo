@@ -6,9 +6,9 @@
     <style>
         #gallery{height:330px;overflow:hidden;}
         /* spacegallery 必要元素 */
-        .spacegallery{position:relative;overflow:hidden;}
-        .spacegallery img{position:absolute;transform-origin:center center;}
-        .spacegallery a{z-index:1000;position:absolute;width:100%;display:block;background:url(images/blank.gif);height:100%;top:0px;left:0px;}
+        .spacegallery{position:relative;overflow:hidden;max-width: 100%}
+        .spacegallery img{position:absolute;transform-origin:center center;max-width: 100%;top:0px;left: 0px;}
+        .spacegallery a{z-index:1000;position:absolute;width:100%;display:block;height:100%;top:0px;left:0px;}
 
     </style>
     <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
@@ -17,7 +17,7 @@
     <script>
         $(function () {
             $("#gallery").spacegallery({
-                loadingClass: "loading", 
+                loadingClass: "loading",
                 perspective: 100
             });
         })
@@ -28,14 +28,12 @@
 
 <div id="main_col">
     <div id="gallery" class="spacegallery">
-        <img width="421" height="301" class="p01-text" alt="jquery 特效" src="images/arge.gif" />
-        <img width="421" height="301" class="p02-text" alt="jquery 特效" src="images/fizjomed.gif" />
-        <img width="421" height="301" class="p03-text" alt="jquery 特效" src="images/kurs.gif" />
-        <img width="421" height="301" class="p04-text" alt="jquery 特效" src="images/rejestrator.gif" />
-        <img width="421" height="301" class="p05-text" alt="jquery 特效" src="images/sunsenergy.gif" />
-        <img width="421" height="301" class="p06-text" alt="jquery 特效" src="images/teatry.gif" />
-        <img width="421" height="301" class="p07-text" alt="jquery 特效" src="images/uniwersytet.gif" />
-        <img width="421" height="301" class="p08-text" alt="jquery 特效" src="images/valant.gif" />
+        <img   alt="jquery 特效" src="images/1.jpg" />
+        <img   alt="jquery 特效" src="images/2.jpg" />
+        <img   alt="jquery 特效" src="images/3.jpg" />
+        <img   alt="jquery 特效" src="images/4.jpg" />
+        <img   alt="jquery 特效" src="images/5.jpg" />
+        <img   alt="jquery 特效" src="images/6.jpg" />
     </div>
 </div>
 
