@@ -71,7 +71,6 @@
 						.each(function(nr){
 							var newWidth = this.spacegallery.origWidth - (this.spacegallery.origWidth - this.spacegallery.origWidth * el.spacegalleryCfg.minScale) * el.spacegalleryCfg.asins[nr];
 						var scale = newWidth/this.spacegallery.origWidth;
-						var left = (this.spacegallery.origWidth-newWidth)/2;
 							$(this)
 								.css({
 									top: el.spacegalleryCfg.tops[nr] + 'px',
@@ -208,9 +207,9 @@
 						el.spacegalleryCfg.asins[el.spacegalleryCfg.images] = el.spacegalleryCfg.asins[el.spacegalleryCfg.images - 1] * 1.3;
 						el.spacegalleryCfg.tops[el.spacegalleryCfg.images] = el.spacegalleryCfg.tops[el.spacegalleryCfg.images - 1] * 1.3;
 
-
+						$(el).css('height',el.spacegalleryCfg.tops[el.spacegalleryCfg.images - 1]+$(el).find('img:last').height());
 						if (el.spacegalleryCfg.loaded == el.spacegalleryCfg.images) {
-							$(el).css('height',el.spacegalleryCfg.tops[el.spacegalleryCfg.images - 1]+$(el).find('img:last').height());
+
 							EYE.spacegallery.positionImages(el);
 						}
 					}
