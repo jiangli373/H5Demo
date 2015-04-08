@@ -63,7 +63,7 @@
 				var top = 0;
 				EYE.spacegallery.animated = false;
 				$(el)
-					.find('a')
+					.find('.spacearea')
 						.removeClass(el.spacegalleryCfg.loadingClass)
 						.end()
 					.find('img')
@@ -90,7 +90,6 @@
 			
 			//animate to nex image
 			next: function(e) {
-				console.log('hello============');
 				if (EYE.spacegallery.animated === false) {
 					EYE.spacegallery.animated = true;
 					var el = this.parentNode;
@@ -154,7 +153,7 @@
 				return this.each(function(){
 					var el = this;
 					if ($(el).is('.spacegallery')) {
-						$('<a href="#"></a>')
+						$('<div class="spacearea"></div>')
 							.appendTo(this)
 							.addClass(opt.loadingClass)
 							.bind('move', function(e) {
@@ -165,8 +164,6 @@
 							.bind('moveend', function () {
 
 								if(global_distance>=maxdistance&&velocityX!=0){
-									console.log('=====global_distance====',global_distance);
-									console.log('====velocityX=====',velocityX);
 									$(this).trigger('test');
 								}
 							})
@@ -210,7 +207,10 @@
 							});
 						el.spacegalleryCfg.asins[el.spacegalleryCfg.images] = el.spacegalleryCfg.asins[el.spacegalleryCfg.images - 1] * 1.3;
 						el.spacegalleryCfg.tops[el.spacegalleryCfg.images] = el.spacegalleryCfg.tops[el.spacegalleryCfg.images - 1] * 1.3;
+
+
 						if (el.spacegalleryCfg.loaded == el.spacegalleryCfg.images) {
+							$(el).css('height',el.spacegalleryCfg.tops[el.spacegalleryCfg.images - 1]+$(el).find('img:last').height());
 							EYE.spacegallery.positionImages(el);
 						}
 					}
