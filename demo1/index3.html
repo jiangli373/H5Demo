@@ -1,0 +1,60 @@
+<html>
+<head>
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <style>
+        body {
+            background: black;
+        }
+        .box {
+            background: #fff;
+            width: 200px;
+            height: 200px;
+            margin: 10px 4%;
+            float: left;
+            position: relative;
+            z-index: 0;
+        }
+
+        img {
+            position: relative;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".box").hover(function() {
+                        $(".box").not(this).fadeTo(500, 0.1);
+                        $(this).find('img').animate({
+                            width: 300,
+                            height: 300,
+                            left: -50,
+                            top: -50
+                        }, 100);
+                    },
+                    function() {
+                        $(".box").fadeTo(100, 1);
+                        $(this).find('img').animate({
+                            width: 200,
+                            height: 200,
+                            left: 0,
+                            top: 0
+                        }, 500);
+                    });
+        });
+    </script>
+</head>
+<body>
+<div class="box"><img src="images/arge.gif" /></div>
+<div class="box"><img src="images/arge.gif" /></div>
+<div class="box"><img src="images/arge.gif" /></div>
+<div class="box"><img src="images/arge.gif" /></div>
+<div class="box"><img src="images/arge.gif" /></div>
+<div class="box"><img src="images/arge.gif" /></div>
+<div class="box"><img src="images/arge.gif" /></div>
+<div class="box"><img src="images/arge.gif" /></div>
+<div class="box"><img src="images/arge.gif" /></div>
+</body>
