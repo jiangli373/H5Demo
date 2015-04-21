@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/morphext.min.js"></script>
+    <style>
+        .bgcolor-8 {
+            background: #3d4444;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content bgcolor-8">
+        <h3 class="center">Morphext <span id="js-rotating1">So Simple, Very Doge, Much Wow, Such Cool</span></h3>
+
+        <h3 class="center">Photoshop是 <span id="js-rotating2">图像处理,作品设计,制作高质量图片</span> 的常用图像软件。</h3>
+
+        <h3 class="center">你了解Photoshop中的 <span id="js-rotating3">通道的概念,通道于曲线,通道与色阶,通道与蒙版,通道与应用图像</span> 等命令吗？</h3>
+    </div>
+</div>
+<a href="http://www.htmleaf.com/jQuery/Text-Link-Effects/201502021316.html">文档地址</a>
+<script>
+    $(function () {
+        $("#js-rotating1").Morphext({
+            animation: "bounceOut"
+        });
+        $("#js-rotating2").Morphext({
+            animation: "flip"
+        });
+        $("#js-rotating3").Morphext({
+            animation: "lightSpeedIn"
+        });
+    })
+</script>
+</body>
+</html>
