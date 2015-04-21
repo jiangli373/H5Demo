@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+<div class="htmleaf-container">
+    <header class="htmleaf-header">
+        <h1 id="demo-title">jQuery绚丽霓虹灯文字特效插件 <p id="demo-desc">A Text Neon Golden effect jQuery plug-in</p></h1>
+    </header>
+    <div class="htmleaf-content">
+        <div class="board">
+            <p id="no">No</p>
+            <p id="vacancy">Vacancy</p>
+        </div>
+    </div>
+</div>
+
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.novacancy.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#demo-title").novacancy({
+            'blink': 1,
+            'off': 1,
+            'color': '#e64e8e',
+            'glow': ['0 0 80px #fbda72', '0 0 30px #dd571b', '0 0 6px #4c5692']
+        });
+        $("#demo-desc").novacancy({
+            'reblinkProbability': 0.1,
+            'blinkMin': 0.2,
+            'blinkMax': 0.6,
+            'loopMin': 8,
+            'loopMax': 10,
+            'color': '#ffffff',
+            'glow': ['0 0 50px #ffffff', '0 0 30px #008000', '0 0 6px #0000ff']
+        });
+        $('#no').novacancy({
+            'reblinkProbability': 0.1,
+            'blinkMin': 0.2,
+            'blinkMax': 0.6,
+            'loopMin': 8,
+            'loopMax': 10,
+            'color': '#ffffff',
+            'glow': ['0 0 80px #ffffff', '0 0 30px #008000', '0 0 6px #0000ff']
+        });
+
+        $('#vacancy').novacancy({
+            'blink': 1,
+            'off': 1,
+            'color': 'Red',
+            'glow': ['0 0 80px Red', '0 0 30px FireBrick', '0 0 6px DarkRed']
+        });
+    });
+</script>
+</body>
+</html>
